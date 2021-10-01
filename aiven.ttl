@@ -1,0 +1,22 @@
+@prefix aiven: <http://rdf.aiven.io/kinds/>
+@prefix type: <http://rdf.aiven.io/kinds/class/> .
+@prefix rel: <http://rdf.aiven.io/kinds/relation/> .
+@prefix service_type: <http://rdf.aiven.io/kinds/enum/service_type/> .
+@prefix service: <http://rdf.aiven.io/data/services/> .
+@prefix project: <http://rdf.aiven.io/data/projects/> .
+
+service:1004
+	a type:Service;
+	rel:service_type service_type:opensearch;
+	rel:belongs_to project:foo-a1b2d3e4;
+	rel:name "pkalliok-os".
+
+service:1005
+	a type:Service;
+	rel:service_type service_type:kafka;
+	rel:belongs_to project:foo-a1b2d3e4;
+	rel:name "pkalliok-kafka".
+
+project:foo-a1b2d3e4
+	a type:Project;
+	rel:name "test".
